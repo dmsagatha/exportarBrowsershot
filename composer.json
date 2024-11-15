@@ -35,6 +35,8 @@
         }
     },
     "scripts": {
+        "format": "vendor/bin/php-cs-fixer fix",
+        "lint": "vendor/bin/php-cs-fixer fix --dry-run",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
