@@ -6,5 +6,9 @@
     },
     "line_ending": false,
     "single_blank_line_at_eof": false
-  }
+  },
+  "indent_style": "space",
+  "indent_size": 2,
+  "indent_with_tabs": false,
+  "indent": "  "
 }
