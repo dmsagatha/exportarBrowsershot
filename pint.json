@@ -4,6 +4,6 @@
     "array_syntax": {
       "syntax": "short"
     },
-    "single_blank_line_at_eof": false
+    "line_ending": false
   }
 }
