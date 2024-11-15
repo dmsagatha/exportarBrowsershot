@@ -11,28 +11,28 @@ use App\Http\Controllers\ProfileController;
  * Todo se configuró en la clase App\Services\PdfWrapper
  */
 Route::get('/', function () {
-  return (new PdfWrapper)
+  return (new PdfWrapper())
     ->loadView('exports.example', [
       'title' => 'Ejemplo exportar con Browsershot (PdfWrapper)',
     ])
     // Opciones para la descarga/visualización del archivo
     // ->save('example.pdfwrapper.pdf');
     ->download('example.pdfwrapper.pdf');
-    // ->stream('example.pdfwrapper.pdf');
-      
-    // Personalizar el encabezado y pie de página
-    /* ->loadHtml("<h1>Ejemplo exportar con Browsershot</h1>")
-    ->loadHeaderHtml("<h1 style='font-size: 14px'>Encabezado</h1>")
-    ->loadFooterHtml("<h1 style='font-size: 14px'>Pie de página</h1>")
-    ->stream('example.pdfwrapper.pdf'); */
+  // ->stream('example.pdfwrapper.pdf');
+
+  // Personalizar el encabezado y pie de página
+  /* ->loadHtml("<h1>Ejemplo exportar con Browsershot</h1>")
+  ->loadHeaderHtml("<h1 style='font-size: 14px'>Encabezado</h1>")
+  ->loadFooterHtml("<h1 style='font-size: 14px'>Pie de página</h1>")
+  ->stream('example.pdfwrapper.pdf'); */
 });
 
 Route::get('/grafico', function () {
-  return (new PdfWrapper)
+  return (new PdfWrapper())
     ->loadView('exports.charts')
     // Sin encabezado y pie de página
-    ->loadHeaderHtml("<p></p>")
-    ->loadFooterHtml("<p></p>")
+    ->loadHeaderHtml('<p></p>')
+    ->loadFooterHtml('<p></p>')
     ->stream('example.graficoGoogle.pdf');
 });
 
@@ -43,14 +43,14 @@ Route::get('/grafico', function () {
     ->setIncludePath(config('services.browsershot.include_path'))
     // ->save('example.pdf');
     ->savePdf('laravel.pdf');
-  
+
   return view('welcome');
 }); */
 Route::get('/exportar', function () {
-  $pdf = Browsershot::html("<h1>Tutorial de Laravel</h1>")
+  $pdf = Browsershot::html('<h1>Tutorial de Laravel</h1>')
     ->setIncludePath(config('services.browsershot.include_path'))
     ->pdf();
-  
+
   // Descargar el archivo
   /* return new Response($pdf, 200, [
     'Content-Type' => 'application/pdf',
@@ -93,7 +93,6 @@ Route::get('/plantilla', function () {
 
   return view('welcome');
 });
-
 
 Route::get('/dashboard', function () {
   return view('dashboard');

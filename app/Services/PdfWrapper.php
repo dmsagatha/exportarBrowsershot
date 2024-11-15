@@ -19,8 +19,8 @@ class PdfWrapper
   {
     $this->pdfGenerator = new Browsershot();
 
-    $this->headerHtml =  view('exports._header')->render();
-    $this->footerHtml =  view('exports._footer')->render();
+    $this->headerHtml = view('exports._header')->render();
+    $this->footerHtml = view('exports._footer')->render();
   }
 
   public function loadView(string $bladeFile, array $data = []): self
