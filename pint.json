@@ -1,3 +1,9 @@
 {
-  "preset": "psr12"
+  "preset": "psr12",
+  "rules": {
+    "array_syntax": {
+      "syntax": "short"
+    },
+    "single_blank_line_at_eof": false
+  }
 }
