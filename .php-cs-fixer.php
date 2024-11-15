@@ -9,9 +9,9 @@ $finder = PhpCsFixer\Finder::create()
         'vendor',
         'docker'
     ])
-    ->name("*.php")
-    ->notName("server.php")
-    ->notName("*.blade.php")
+    ->name('*.php')
+    ->notName('server.php')
+    ->notName('*.blade.php')
     ->ignoreDotFiles(true)
     ->ignoreVCS(true);
 
@@ -23,7 +23,7 @@ return (new PhpCsFixer\Config())
         'array_syntax' => ['syntax' => 'short'],
         // 'array_syntax' => ['syntax' => 'long'],
         'combine_consecutive_unsets' => true,
-        'class_attributes_separation' => ['elements' => ['method' => 'one',]],
+        'class_attributes_separation' => ['elements' => ['method' => 'one', ]],
         'multiline_whitespace_before_semicolons' => false,
         'single_quote' => true,
 
@@ -112,8 +112,9 @@ return (new PhpCsFixer\Config())
         'unary_operator_spaces' => true,
         'whitespace_after_comma_in_array' => true,
         'space_after_semicolon' => true,
-        // 'single_blank_line_at_eof' => false
+        'single_blank_line_at_eof' => false
     ])
     // ->setIndent("\t")
+    ->setIndent("  ")
     ->setLineEnding("\n")
 ;
